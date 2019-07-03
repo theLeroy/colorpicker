@@ -1,6 +1,24 @@
 import UIKit
 import AVFoundation
 
+extension UIImage {
+    func getPixelColor(pos: CGPoint) -> UIColor {
+        
+        let pixelData = self.cgImage!.dataProvider!.data
+        let data: UnsafePointer<UInt8> = CFDataGetBytePtr(pixelData)
+        
+        let pixelInfo: Int = ((Int(self.size.width) * Int(pos.y)) + Int(pos.x)) * 4
+        
+        let r = CGFloat(data[pixelInfo]) / CGFloat(255.0)
+        let g = CGFloat(data[pixelInfo+1]) / CGFloat(255.0)
+        let b = CGFloat(data[pixelInfo+2]) / CGFloat(255.0)
+        let a = CGFloat(data[pixelInfo+3]) / CGFloat(255.0)
+        
+        return UIColor(red: r, green: g, blue: b, alpha: 1)
+    }
+    
+}
+
 class ViewController: UIViewController{
     var previewView : UIView!
     var boxView:UIView!
@@ -15,11 +33,13 @@ class ViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         previewView = UIView(frame: CGRect(x: 0,
                                            y: 0,
                                            width: UIScreen.main.bounds.size.width,
                                            height: UIScreen.main.bounds.size.height))
         previewView.contentMode = UIView.ContentMode.scaleAspectFit
+        previewView.backgroundColor = UIColor.white
         view.addSubview(previewView)
         
         //Add a view on top of the cameras' view
@@ -53,6 +73,21 @@ class ViewController: UIViewController{
     
     @objc func onClickMyButton(sender: UIButton){
         print("button pressed")
+//        let image = UIImage(named: "Artboard")!
+//        let image = previewLayer.accessibilityFrame
+        
+        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
+        let image = renderer.image { ctx in
+            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+        }
+        
+        print(image.size)
+        let color = image.getPixelColor(pos: CGPoint(x:200,y:200))
+        print(color)
+        print(UIColor.red)
+        previewView.backgroundColor = color
+//        print(UIImage(named: "Artboard")!)
+        print("ferti")
     }
 }
 

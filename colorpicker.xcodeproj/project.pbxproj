@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		182296E122CCF8AB00268C37 /* Artboard.png in Resources */ = {isa = PBXBuildFile; fileRef = 182296E022CCF8AA00268C37 /* Artboard.png */; };
+		182296E422CCF9E600268C37 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 182296E322CCF9E600268C37 /* Images.xcassets */; };
 		182B987922CBA37000E298D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B987822CBA37000E298D8 /* AppDelegate.swift */; };
 		182B987B22CBA37000E298D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 182B987A22CBA37000E298D8 /* ViewController.swift */; };
 		182B987E22CBA37000E298D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 182B987C22CBA37000E298D8 /* Main.storyboard */; };
@@ -34,6 +36,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		182296E022CCF8AA00268C37 /* Artboard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Artboard.png; path = ../../../../../../../Desktop/Artboard.png; sourceTree = "<group>"; };
+		182296E322CCF9E600268C37 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		182B987522CBA37000E298D8 /* colorpicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = colorpicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		182B987822CBA37000E298D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		182B987A22CBA37000E298D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -101,8 +105,10 @@
 				182B987A22CBA37000E298D8 /* ViewController.swift */,
 				182B987C22CBA37000E298D8 /* Main.storyboard */,
 				182B987F22CBA37100E298D8 /* Assets.xcassets */,
+				182296E022CCF8AA00268C37 /* Artboard.png */,
 				182B988122CBA37100E298D8 /* LaunchScreen.storyboard */,
 				182B988422CBA37100E298D8 /* Info.plist */,
+				182296E322CCF9E600268C37 /* Images.xcassets */,
 			);
 			path = colorpicker;
 			sourceTree = "<group>";
@@ -230,7 +236,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				182B988322CBA37100E298D8 /* LaunchScreen.storyboard in Resources */,
+				182296E422CCF9E600268C37 /* Images.xcassets in Resources */,
 				182B988022CBA37100E298D8 /* Assets.xcassets in Resources */,
+				182296E122CCF8AB00268C37 /* Artboard.png in Resources */,
 				182B987E22CBA37000E298D8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
