@@ -16,8 +16,8 @@ extension UIImage {
         
         return UIColor(red: r, green: g, blue: b, alpha: 1)
     }
-    
 }
+
 
 class ViewController: UIViewController{
     var previewView : UIView!
@@ -81,10 +81,11 @@ class ViewController: UIViewController{
             view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
         }
         
-        print(image.size)
-        let color = image.getPixelColor(pos: CGPoint(x:200,y:200))
+       
+        print(view.frame)
+        let color = image.getPixelColor(pos: CGPoint(x:200,y:400))
         print(color)
-        print(UIColor.red)
+       
         previewView.backgroundColor = color
 //        print(UIImage(named: "Artboard")!)
         print("ferti")
@@ -147,6 +148,7 @@ extension ViewController:  AVCaptureVideoDataOutputSampleBufferDelegate{
     
     func captureOutput(_ output: AVCaptureOutput, didOutput sampleBuffer: CMSampleBuffer, from connection: AVCaptureConnection) {
         // do stuff here
+        
     }
     
     // clean up AVCapture
