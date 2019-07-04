@@ -19,6 +19,7 @@ extension UIImage {
 }
 
 
+
 class ViewController: UIViewController{
     var previewView : UIView!
     var boxView:UIView!
@@ -76,14 +77,12 @@ class ViewController: UIViewController{
 //        let image = UIImage(named: "Artboard")!
 //        let image = previewLayer.accessibilityFrame
         
-        let renderer = UIGraphicsImageRenderer(size: view.bounds.size)
-        let image = renderer.image { ctx in
-            view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        }
-        
-       
-        print(view.frame)
-        let color = image.getPixelColor(pos: CGPoint(x:200,y:400))
+        let image = cropCameraImage()
+//        let image = cropCameraImage().asImage()
+        print(previewLayer)
+        print(image)
+        print(image.size)
+        let color = image.getPixelColor(pos: CGPoint(x:200,y:450))
         print(color)
        
         previewView.backgroundColor = color
@@ -156,4 +155,8 @@ extension ViewController:  AVCaptureVideoDataOutputSampleBufferDelegate{
         session.stopRunning()
     }
     
+    
 }
+
+
+
